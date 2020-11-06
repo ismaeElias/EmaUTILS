@@ -1,6 +1,6 @@
 import React from "react";
 import { GlobalStyles, GridLayout } from "./GlobalStyles";
-import Routes from './Routes';
+import Routes from "./Routes";
 
 function App() {
   return (

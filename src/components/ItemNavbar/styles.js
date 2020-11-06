@@ -10,7 +10,7 @@ const Item = styled(Link)`
     display: flex;
     font-size : 20px;
     font-weight: bold;
-    height: 65px;
+    height: 60px;
     justify-content:center;
     transition: all 0.20s ease-in-out;
     text-decoration : none;

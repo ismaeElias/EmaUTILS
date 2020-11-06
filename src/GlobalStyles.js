@@ -7,7 +7,8 @@ const GlobalStyles = createGlobalStyle`
         --main-text-light   : #FFF;
         --main-background   : #F5F5F5;
         --main-bg-container : #E8E8E8;
-        --main-border       : #BFBFBF;
+        --main-border       : #DEDEDE;
+        --main-bg-selected  : #E1E1E1;
     }
 
     *{
@@ -18,18 +19,14 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Poppins', sans-serif;
     }
 
-    html,body{
-        width: 100vw;
-        height: 100vh;
-    }
 `;
 
 const GridLayout = styled.div`
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 85px auto;
-    grid-template-rows: 80px auto;
+    grid-template-columns: 65px auto;
+    grid-template-rows: 60px auto;
     grid-template-areas:
     "HD HD"
     "NB CT";

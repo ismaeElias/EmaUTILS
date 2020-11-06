@@ -13,9 +13,10 @@ const HeaderPage = styled.header`
 
 const Image = styled.img`
     max-width: 45px;
-    max-height : 60px;
+    max-height : 45px;
     width : auto;
     height : auto;
+    margin-top: 5px;
 `;
 
 const Title = styled(Link)`

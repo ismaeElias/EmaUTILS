@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+    grid-area : CT;
     width : 100%;
     height : 100%;
     display : flex;
@@ -10,14 +11,14 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-    width : 900px;
-    height : 500px
+    width : 600px;
+    height : 300px
 `;
 
 const DescriptionContainer = styled.div`
     background-color: var(--main-bg-container);
     height : 150px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     border-radius: 20px;
     border : 1px solid var(--main-border);
     width : 600px;
