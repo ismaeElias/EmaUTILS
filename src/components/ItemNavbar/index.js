@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerItem, Item } from "./styles";
+import { ContainerItem, Item, Version } from "./styles";
 
 function handlerStyle(id) {
   if (id) {
@@ -11,7 +11,7 @@ function handlerStyle(id) {
 }
 
 function ItemNavbar() {
-    
+  
   const TitleConcatenador = "<C>";
   const Versao = "v0.1";
 
@@ -20,7 +20,7 @@ function ItemNavbar() {
       <Item to="/Concatenador" id="1">
         {TitleConcatenador}
       </Item>
-      <Item>{Versao}</Item>
+      <Version >{Versao}</Version>
     </ContainerItem>
   );
 }

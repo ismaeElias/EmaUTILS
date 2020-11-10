@@ -1,7 +1,15 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-
+const Version = styled.p`
+    align-items: center;
+    color: var(--main-text);
+    display: flex;
+    font-size : 14px;
+    font-weight: bold;
+    height: 60px;
+    justify-content:center;
+`;
 
 const Item = styled(Link)`
     align-items: center;
@@ -29,10 +37,8 @@ const ContainerItem = styled.div`
     display : flex;
     flex-direction : column;
 
-    & ${Item}:last-child{
+    & ${Version}:last-child{
         margin-top:auto;
-        border:none;
-        font-size:14px;
 
         &:hover{
             color: var(--main-text);
@@ -42,4 +48,4 @@ const ContainerItem = styled.div`
 `;
 
 
-export {ContainerItem,Item};
+export { ContainerItem, Item, Version };

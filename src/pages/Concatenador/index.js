@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/Header";
 import NavBar from "../../components/Navbar";
 import Container from "../../components/Container";
+import PageConcatenador from '../../components/Concatenador';
 
 function Concatenador() {
   return (
@@ -9,7 +10,7 @@ function Concatenador() {
       <Header />
       <NavBar />
       <Container>
-          <p>Concatenador</p>
+        <PageConcatenador />
       </Container>
     </>
   );
