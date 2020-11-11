@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-const api = axios.create({baseURL : 'https://concatenador-pex.herokuapp.com/',timeout: 1000});
+const api = axios.create({baseURL : 'https://concatenador-pex.herokuapp.com/'});
 
 export default api;
