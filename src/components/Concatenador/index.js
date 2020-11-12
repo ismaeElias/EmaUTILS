@@ -17,21 +17,32 @@ function PageConcatenador() {
   const [finalText, setFinalText] = useState("");
   const [text, setText] = useState("");
   const [resultText, setResultText] = useState("");
+  const [loading,setLoading] = useState(false);
 
-  return (
-    <Layout onSubmit={(event) => {
-      event.preventDefault();
 
-      api.post('/', {
+  async function handlerApi() {
+    setLoading(true);
+    try {
+      
+      await api.post('/', {
         texto: text,
         inicial: inicialText,
         final: finalText
-      }).then(function (response) {
+      }).then(response => {
         setResultText(response.data);
-        console.log(response);
-      }).catch(function (error) {
-        console.log(error);
-      })
+        setLoading(false);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+ 
+
+  return (
+
+    <Layout onSubmit={async (event) => {
+      event.preventDefault();
+      handlerApi();
     }}>
       <Header>
         <ContainerHeader>
@@ -58,7 +69,10 @@ function PageConcatenador() {
             setText(event.target.value);
           }}
         />
-        <Button type="submit"><p>&#8646;</p></Button>
+        <Button type="submit" id='submit'>
+         {loading && <p>Carregando</p>}
+         {!loading && <p>&#8646;</p>}
+        </Button>
         <TextAreaStyled
           disabled
           value={resultText}
