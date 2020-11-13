@@ -5,45 +5,45 @@ import {
   SectionMain,
   ContainerHeader,
   TextAreaStyled,
-  Button
+  Button,
 } from "./style";
 import Input from "../Input";
+import Spinner from "../Spinner";
 
 import api from "../../services/api";
 
 function PageConcatenador() {
-
   const [inicialText, setInicialText] = useState("");
   const [finalText, setFinalText] = useState("");
   const [text, setText] = useState("");
   const [resultText, setResultText] = useState("");
-  const [loading,setLoading] = useState(false);
-
+  const [loading, setLoading] = useState(false);
 
   async function handlerApi() {
     setLoading(true);
     try {
-      
-      await api.post('/', {
-        texto: text,
-        inicial: inicialText,
-        final: finalText
-      }).then(response => {
-        setResultText(response.data);
-        setLoading(false);
-      });
+      await api
+        .post("/", {
+          texto: text,
+          inicial: inicialText,
+          final: finalText,
+        })
+        .then((response) => {
+          setResultText(response.data);
+          setLoading(false);
+        });
     } catch (e) {
       console.log(e);
     }
   }
- 
 
   return (
-
-    <Layout onSubmit={async (event) => {
-      event.preventDefault();
-      handlerApi();
-    }}>
+    <Layout
+      onSubmit={async (event) => {
+        event.preventDefault();
+        handlerApi();
+      }}
+    >
       <Header>
         <ContainerHeader>
           <Input
@@ -69,14 +69,11 @@ function PageConcatenador() {
             setText(event.target.value);
           }}
         />
-        <Button type="submit" id='submit'>
-         {loading && <p>Carregando</p>}
-         {!loading && <p>&#8646;</p>}
+        <Button type="submit" id="submit" disabled={loading}>
+          {loading && <Spinner />}
+          {!loading && <p>&#8646;</p>}
         </Button>
-        <TextAreaStyled
-          disabled
-          value={resultText}
-        />
+        <TextAreaStyled disabled value={resultText} />
       </SectionMain>
     </Layout>
   );

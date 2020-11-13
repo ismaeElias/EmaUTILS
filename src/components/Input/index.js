@@ -12,7 +12,7 @@ function Input({textPlaceholder,title,valueText,id,onChangeForm}) {
           id={id}
           type="text"
           placeholder={textPlaceholder}
-          maxLength="10"
+          maxLength="30"
           value={valueText}
           onChange={(event) => {
             onChangeForm(event.target.value);
