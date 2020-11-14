@@ -38,7 +38,7 @@ export const ContainerHeader = styled.div`
     border-radius: 15px;
     padding: 10px;
     display : flex;
-    aling-items:center;
+    align-items:center;
     justify-content:center;
 `;
 
@@ -53,7 +53,6 @@ export const TextAreaStyled = styled.textarea`
     padding: 15px;
     color: var(--main-text);
 
-
     transition: all 0.8s ease-in-out;
     &:hover{
         border-color: var(--main-color);
@@ -63,29 +62,29 @@ export const TextAreaStyled = styled.textarea`
     }
 
 
-::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
-}
-::-webkit-scrollbar-button {
-  width: 2px;
-  height:10px;
-}
-::-webkit-scrollbar-thumb {
-  background:var(--main-color);
-  border: 0px none var(--main-color);
-  border-radius: 50px;
-}
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 2px;
+    height:10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background:var(--main-color);
+    border: 0px none var(--main-color);
+    border-radius: 50px;
+  }
 
-::-webkit-scrollbar-track {
-  background: #fff;
-  border: 0px none var(--main-color);
-  border-radius: 50px;
-}
+  ::-webkit-scrollbar-track {
+    background: #fff;
+    border: 0px none var(--main-color);
+    border-radius: 50px;
+  }
 
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 `;
 
 export const Button = styled.button`

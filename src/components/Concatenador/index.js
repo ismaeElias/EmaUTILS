@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ReactTooltip from "react-tooltip";
+
 import {
   Layout,
   Header,
@@ -73,7 +75,19 @@ function PageConcatenador() {
           {loading && <Spinner />}
           {!loading && <p>&#8646;</p>}
         </Button>
-        <TextAreaStyled disabled value={resultText} />
+
+        <TextAreaStyled
+          data-tip="Copiado!"
+          data-event="dblclick"
+          defaultValue={resultText}
+          onClick={(e) => {
+            let TextArea = e.target; 
+            TextArea.select();
+            document.execCommand("copy");
+          }}
+        />
+
+        <ReactTooltip globalEventOff="click" />
       </SectionMain>
     </Layout>
   );
